@@ -14,6 +14,7 @@
 		58696F3E272B1CD200B18788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58696F3C272B1CD200B18788 /* LaunchScreen.storyboard */; };
 		58696F49272B1CD200B18788 /* DogedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F48272B1CD200B18788 /* DogedexTests.swift */; };
 		58696F54272B1CD300B18788 /* DogedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F53272B1CD300B18788 /* DogedexUITests.swift */; };
+		58696F68272B25BC00B18788 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F67272B25BC00B18788 /* ViewCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		58696F4F272B1CD300B18788 /* DogedexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogedexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58696F53272B1CD300B18788 /* DogedexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogedexUITests.swift; sourceTree = "<group>"; };
 		58696F55272B1CD300B18788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58696F67272B25BC00B18788 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		58696F30272B1CCF00B18788 /* Dogedex */ = {
 			isa = PBXGroup;
 			children = (
+				58696F65272B259D00B18788 /* Common */,
 				58696F3A272B1CD200B18788 /* Assets.xcassets */,
 				58696F63272B243200B18788 /* Scenes */,
 				58696F61272B1F7700B18788 /* SupportingFiles */,
@@ -147,6 +150,22 @@
 				58696F35272B1CCF00B18788 /* DogBreedListViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		58696F65272B259D00B18788 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				58696F66272B25B100B18788 /* Protocols */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		58696F66272B25B100B18788 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				58696F67272B25BC00B18788 /* ViewCode.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +300,7 @@
 				58696F36272B1CCF00B18788 /* DogBreedListViewController.swift in Sources */,
 				58696F32272B1CCF00B18788 /* AppDelegate.swift in Sources */,
 				58696F34272B1CCF00B18788 /* SceneDelegate.swift in Sources */,
+				58696F68272B25BC00B18788 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
