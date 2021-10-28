@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var applicationCoordinator: Coordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,8 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = scene
         
         self.window = window
-        self.window?.rootViewController = DogBreedListViewController()
-        self.window?.makeKeyAndVisible()
+        self.applicationCoordinator = ApplicationCoordinator(window: window)
+        
+        self.applicationCoordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
