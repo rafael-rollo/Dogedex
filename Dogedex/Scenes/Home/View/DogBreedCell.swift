@@ -11,7 +11,7 @@ class DogBreedCell: UITableViewCell, ReusableView {
     
     static let height: CGFloat = 70
         
-    private lazy var label: UILabel = {
+    private lazy var breedLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
@@ -19,17 +19,41 @@ class DogBreedCell: UITableViewCell, ReusableView {
         return label
     }()
     
+    private lazy var subBreedslabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .secondaryLabel
+        label.font = .openSans(.italic, size: 12)
+        label.isHidden = true
+        return label
+    }()
+    
+    private lazy var breedTitlesView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [
+            breedLabel,
+            subBreedslabel
+        ])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 4
+        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        return view
+    }()
+    
     private lazy var navigationIndicatorIconView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .secondaryLabel
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return imageView
     }()
     
     private lazy var containerView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [
-            label, navigationIndicatorIconView
+            breedTitlesView, navigationIndicatorIconView
         ])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
@@ -52,7 +76,14 @@ class DogBreedCell: UITableViewCell, ReusableView {
     }
     
     func setup(from breed: Breed) {
-        label.text = breed.title.capitalized
+        breedLabel.text = breed.title.capitalized
+        
+        if let subBreeds = breed.subBreeds {
+            subBreedslabel.text = subBreeds
+                .map({ $0.capitalized })
+                .joined(separator: ", ")
+            subBreedslabel.isHidden = false
+        }
         
         navigationIndicatorIconView.image = UIImage(systemName: "arrow.forward")?
             .withRenderingMode(.alwaysTemplate)
