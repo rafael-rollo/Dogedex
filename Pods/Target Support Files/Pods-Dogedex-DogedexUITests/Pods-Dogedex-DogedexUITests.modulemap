@@ -1,0 +1,6 @@
+module Pods_Dogedex_DogedexUITests {
+  umbrella header "Pods-Dogedex-DogedexUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

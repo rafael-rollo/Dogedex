@@ -16,6 +16,9 @@
 		58696F54272B1CD300B18788 /* DogedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F53272B1CD300B18788 /* DogedexUITests.swift */; };
 		58696F68272B25BC00B18788 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F67272B25BC00B18788 /* ViewCode.swift */; };
 		58696F6B272B2AE300B18788 /* DogBreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F6A272B2AE300B18788 /* DogBreedListViewModel.swift */; };
+		7CD8897BC1C9F87059D08B1D /* libPods-Dogedex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4FE174A2B47E1721F2E335 /* libPods-Dogedex.a */; };
+		A3E916544A01E16B54511F28 /* libPods-DogedexTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */; };
+		C3182FE30AA1B3C4B54B0DEB /* libPods-Dogedex-DogedexUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA57AB6221B3E5601C2E1DAC /* libPods-Dogedex-DogedexUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F3AC1D7AF6B3DC0BDE7F214 /* Pods-Dogedex-DogedexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogedex-DogedexUITests.release.xcconfig"; path = "Target Support Files/Pods-Dogedex-DogedexUITests/Pods-Dogedex-DogedexUITests.release.xcconfig"; sourceTree = "<group>"; };
+		10319B34AE12F6DDFE98BDA6 /* Pods-DogedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogedexTests.release.xcconfig"; path = "Target Support Files/Pods-DogedexTests/Pods-DogedexTests.release.xcconfig"; sourceTree = "<group>"; };
+		4523A5A8F0F6E61286D7A32E /* Pods-Dogedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogedex.release.xcconfig"; path = "Target Support Files/Pods-Dogedex/Pods-Dogedex.release.xcconfig"; sourceTree = "<group>"; };
+		46D6AA2F03D8105C4939E113 /* Pods-Dogedex-DogedexUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogedex-DogedexUITests.debug.xcconfig"; path = "Target Support Files/Pods-Dogedex-DogedexUITests/Pods-Dogedex-DogedexUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58696F2E272B1CCF00B18788 /* Dogedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58696F31272B1CCF00B18788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58696F33272B1CCF00B18788 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		58696F55272B1CD300B18788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58696F67272B25BC00B18788 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		58696F6A272B2AE300B18788 /* DogBreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedListViewModel.swift; sourceTree = "<group>"; };
+		5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DogedexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68A721CCF9CC70B0F2078694 /* Pods-Dogedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogedex.debug.xcconfig"; path = "Target Support Files/Pods-Dogedex/Pods-Dogedex.debug.xcconfig"; sourceTree = "<group>"; };
+		B80EA423FD8B50DDBA9BCDF5 /* Pods-DogedexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogedexTests.debug.xcconfig"; path = "Target Support Files/Pods-DogedexTests/Pods-DogedexTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA4FE174A2B47E1721F2E335 /* libPods-Dogedex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dogedex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA57AB6221B3E5601C2E1DAC /* libPods-Dogedex-DogedexUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dogedex-DogedexUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD8897BC1C9F87059D08B1D /* libPods-Dogedex.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E916544A01E16B54511F28 /* libPods-DogedexTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3182FE30AA1B3C4B54B0DEB /* libPods-Dogedex-DogedexUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10654D41D36EDB802BB9CA4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4FE174A2B47E1721F2E335 /* libPods-Dogedex.a */,
+				EA57AB6221B3E5601C2E1DAC /* libPods-Dogedex-DogedexUITests.a */,
+				5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D96DCE6CD591B822105956F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68A721CCF9CC70B0F2078694 /* Pods-Dogedex.debug.xcconfig */,
+				4523A5A8F0F6E61286D7A32E /* Pods-Dogedex.release.xcconfig */,
+				46D6AA2F03D8105C4939E113 /* Pods-Dogedex-DogedexUITests.debug.xcconfig */,
+				0F3AC1D7AF6B3DC0BDE7F214 /* Pods-Dogedex-DogedexUITests.release.xcconfig */,
+				B80EA423FD8B50DDBA9BCDF5 /* Pods-DogedexTests.debug.xcconfig */,
+				10319B34AE12F6DDFE98BDA6 /* Pods-DogedexTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		58696F25272B1CCF00B18788 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				58696F47272B1CD200B18788 /* DogedexTests */,
 				58696F52272B1CD300B18788 /* DogedexUITests */,
 				58696F2F272B1CCF00B18788 /* Products */,
+				2D96DCE6CD591B822105956F /* Pods */,
+				10654D41D36EDB802BB9CA4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58696F58272B1CD300B18788 /* Build configuration list for PBXNativeTarget "Dogedex" */;
 			buildPhases = (
+				1B920195E0D92721FC49858D /* [CP] Check Pods Manifest.lock */,
 				58696F2A272B1CCF00B18788 /* Sources */,
 				58696F2B272B1CCF00B18788 /* Frameworks */,
 				58696F2C272B1CCF00B18788 /* Resources */,
@@ -203,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58696F5B272B1CD300B18788 /* Build configuration list for PBXNativeTarget "DogedexTests" */;
 			buildPhases = (
+				A6BE2183FE172A316E767511 /* [CP] Check Pods Manifest.lock */,
 				58696F40272B1CD200B18788 /* Sources */,
 				58696F41272B1CD200B18788 /* Frameworks */,
 				58696F42272B1CD200B18788 /* Resources */,
@@ -221,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58696F5E272B1CD300B18788 /* Build configuration list for PBXNativeTarget "DogedexUITests" */;
 			buildPhases = (
+				FB93410C075155470B23EFAB /* [CP] Check Pods Manifest.lock */,
 				58696F4B272B1CD300B18788 /* Sources */,
 				58696F4C272B1CD300B18788 /* Frameworks */,
 				58696F4D272B1CD300B18788 /* Resources */,
@@ -302,6 +346,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B920195E0D92721FC49858D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dogedex-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6BE2183FE172A316E767511 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DogedexTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB93410C075155470B23EFAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dogedex-DogedexUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58696F2A272B1CCF00B18788 /* Sources */ = {
@@ -477,6 +590,7 @@
 		};
 		58696F59272B1CD300B18788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68A721CCF9CC70B0F2078694 /* Pods-Dogedex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,6 +610,7 @@
 		};
 		58696F5A272B1CD300B18788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4523A5A8F0F6E61286D7A32E /* Pods-Dogedex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,6 +630,7 @@
 		};
 		58696F5C272B1CD300B18788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80EA423FD8B50DDBA9BCDF5 /* Pods-DogedexTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,6 +653,7 @@
 		};
 		58696F5D272B1CD300B18788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10319B34AE12F6DDFE98BDA6 /* Pods-DogedexTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,6 +676,7 @@
 		};
 		58696F5F272B1CD300B18788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46D6AA2F03D8105C4939E113 /* Pods-Dogedex-DogedexUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,6 +697,7 @@
 		};
 		58696F60272B1CD300B18788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F3AC1D7AF6B3DC0BDE7F214 /* Pods-Dogedex-DogedexUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
