@@ -15,6 +15,7 @@ class DogBreedCell: UITableViewCell, ReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
+        label.font = .openSans(.semibold, size: 16)
         return label
     }()
     
@@ -51,7 +52,7 @@ class DogBreedCell: UITableViewCell, ReusableView {
     }
     
     func setup(from breed: Breed) {
-        label.text = breed.title
+        label.text = breed.title.capitalized
         
         navigationIndicatorIconView.image = UIImage(systemName: "arrow.forward")?
             .withRenderingMode(.alwaysTemplate)
