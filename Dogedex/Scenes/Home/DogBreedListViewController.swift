@@ -31,9 +31,12 @@ class DogBreedListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
         tableView.dataSource = self
-        viewModel.delegate = self
+        tableView.register(DogBreedCell.self,
+                           forCellReuseIdentifier: DogBreedCell.reuseId)
         
+        viewModel.delegate = self
         viewModel.loadBreeds()
     }
     
@@ -44,12 +47,23 @@ class DogBreedListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.dogBreeds[indexPath.row].title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DogBreedCell.reuseId) as? DogBreedCell else {
+            fatalError("Provide an appropriate cell for the DogBreedListViewController's table view")
+        }
+
+        let breed = viewModel.dogBreeds[indexPath.row]
         
+        cell.setup(from: breed)
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return DogBreedCell.height
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // MARK: - view model delegation
