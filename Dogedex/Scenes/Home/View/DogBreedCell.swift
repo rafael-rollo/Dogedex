@@ -88,6 +88,13 @@ class DogBreedCell: UITableViewCell, ReusableView {
         navigationIndicatorIconView.image = UIImage(systemName: "arrow.forward")?
             .withRenderingMode(.alwaysTemplate)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        subBreedslabel.text = ""
+        subBreedslabel.isHidden = true
+    }
 }
 
 extension DogBreedCell: ViewCode {
