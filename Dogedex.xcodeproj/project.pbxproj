@@ -15,6 +15,7 @@
 		58696F49272B1CD200B18788 /* DogedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F48272B1CD200B18788 /* DogedexTests.swift */; };
 		58696F54272B1CD300B18788 /* DogedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F53272B1CD300B18788 /* DogedexUITests.swift */; };
 		58696F68272B25BC00B18788 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F67272B25BC00B18788 /* ViewCode.swift */; };
+		58696F6B272B2AE300B18788 /* DogBreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F6A272B2AE300B18788 /* DogBreedListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		58696F53272B1CD300B18788 /* DogedexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogedexUITests.swift; sourceTree = "<group>"; };
 		58696F55272B1CD300B18788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58696F67272B25BC00B18788 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		58696F6A272B2AE300B18788 /* DogBreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		58696F64272B252100B18788 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				58696F69272B2ACB00B18788 /* ViewModel */,
 				58696F35272B1CCF00B18788 /* DogBreedListViewController.swift */,
 			);
 			path = Home;
@@ -166,6 +169,14 @@
 				58696F67272B25BC00B18788 /* ViewCode.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		58696F69272B2ACB00B18788 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				58696F6A272B2AE300B18788 /* DogBreedListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				58696F32272B1CCF00B18788 /* AppDelegate.swift in Sources */,
 				58696F34272B1CCF00B18788 /* SceneDelegate.swift in Sources */,
 				58696F68272B25BC00B18788 /* ViewCode.swift in Sources */,
+				58696F6B272B2AE300B18788 /* DogBreedListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
