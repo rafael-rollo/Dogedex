@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = scene
         
         self.window = window
-        self.window?.rootViewController = ViewController()
+        self.window?.rootViewController = DogBreedListViewController()
         self.window?.makeKeyAndVisible()
     }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DogBreedListViewController: UITableViewController {
 
     override func loadView() {
         super.loadView()
