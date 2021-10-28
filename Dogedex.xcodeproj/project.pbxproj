@@ -34,6 +34,7 @@
 		58696F93272B540300B18788 /* OpenSans+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F92272B540300B18788 /* OpenSans+UIFont.swift */; };
 		58696F96272B5A6F00B18788 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F95272B5A6F00B18788 /* Coordinator.swift */; };
 		58696F98272B5A9600B18788 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F97272B5A9600B18788 /* ApplicationCoordinator.swift */; };
+		58696F9B272B5D3800B18788 /* DogBreedListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696F9A272B5D3800B18788 /* DogBreedListCoordinator.swift */; };
 		7CD8897BC1C9F87059D08B1D /* libPods-Dogedex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4FE174A2B47E1721F2E335 /* libPods-Dogedex.a */; };
 		A3E916544A01E16B54511F28 /* libPods-DogedexTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */; };
 		C3182FE30AA1B3C4B54B0DEB /* libPods-Dogedex-DogedexUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA57AB6221B3E5601C2E1DAC /* libPods-Dogedex-DogedexUITests.a */; };
@@ -94,6 +95,7 @@
 		58696F92272B540300B18788 /* OpenSans+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenSans+UIFont.swift"; sourceTree = "<group>"; };
 		58696F95272B5A6F00B18788 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		58696F97272B5A9600B18788 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		58696F9A272B5D3800B18788 /* DogBreedListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedListCoordinator.swift; sourceTree = "<group>"; };
 		5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DogedexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A721CCF9CC70B0F2078694 /* Pods-Dogedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogedex.debug.xcconfig"; path = "Target Support Files/Pods-Dogedex/Pods-Dogedex.debug.xcconfig"; sourceTree = "<group>"; };
 		B80EA423FD8B50DDBA9BCDF5 /* Pods-DogedexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogedexTests.debug.xcconfig"; path = "Target Support Files/Pods-DogedexTests/Pods-DogedexTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		58696F64272B252100B18788 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				58696F99272B5D1700B18788 /* Coordinator */,
 				58696F73272B479900B18788 /* View */,
 				58696F69272B2ACB00B18788 /* ViewModel */,
 				58696F35272B1CCF00B18788 /* DogBreedListViewController.swift */,
@@ -325,6 +328,14 @@
 			children = (
 				58696F95272B5A6F00B18788 /* Coordinator.swift */,
 				58696F97272B5A9600B18788 /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		58696F99272B5D1700B18788 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				58696F9A272B5D3800B18788 /* DogBreedListCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -548,6 +559,7 @@
 				58696F32272B1CCF00B18788 /* AppDelegate.swift in Sources */,
 				58696F71272B34B300B18788 /* BreedResponse.swift in Sources */,
 				58696F34272B1CCF00B18788 /* SceneDelegate.swift in Sources */,
+				58696F9B272B5D3800B18788 /* DogBreedListCoordinator.swift in Sources */,
 				58696F68272B25BC00B18788 /* ViewCode.swift in Sources */,
 				58696F96272B5A6F00B18788 /* Coordinator.swift in Sources */,
 				58696F6E272B324100B18788 /* APIRequest.swift in Sources */,

@@ -31,7 +31,7 @@ class ApplicationCoordinator: Coordinator {
     }
 
     @discardableResult func start() -> UIViewController {
-        let initialViewController = DogBreedListViewController()
+        let initialViewController = DogBreedListCoordinator().start()
         rootViewController = initialViewController
 
         return initialViewController

@@ -25,6 +25,7 @@ class DogBreedListViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         
+        self.title = "All Breeds"
         setup()
     }
     

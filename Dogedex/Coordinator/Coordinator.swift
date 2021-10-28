@@ -12,3 +12,7 @@ protocol Coordinator: AnyObject {
 
     @discardableResult func start() -> UIViewController
 }
+
+protocol StackCoordinator: Coordinator {
+    var navigationController: UINavigationController { get set }
+}
