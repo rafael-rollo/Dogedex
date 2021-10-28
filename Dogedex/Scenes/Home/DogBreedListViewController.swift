@@ -12,7 +12,7 @@ class DogBreedListViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         
-        view.backgroundColor = .systemBackground
+        setup()
     }
     
     override func viewDidLoad() {
@@ -21,3 +21,8 @@ class DogBreedListViewController: UITableViewController {
     
 }
 
+extension DogBreedListViewController: ViewCode {
+    func addTheme() {
+        view.backgroundColor = .systemBackground
+    }
+}
