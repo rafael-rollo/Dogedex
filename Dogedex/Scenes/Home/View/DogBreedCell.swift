@@ -64,12 +64,7 @@ extension DogBreedCell: ViewCode {
     }
     
     func addConstraints() {
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-        ])
+        containerView.constrainTo(edgesOf: self)
     }
     
     func addTheme() {
