@@ -14,13 +14,21 @@ protocol DogBreedListViewModelDelegate: AnyObject {
 class DogBreedListViewModel {
     weak var delegate: DogBreedListViewModelDelegate?
     
-    var dogBreeds: [String] = [] {
+    var dogBreeds: [Breed] = [] {
         didSet {
             self.delegate?.updateViews()
         }
     }
     
     func loadBreeds() {
-        dogBreeds = ["affenpinscher", "african", "airedale"]
+        APIRequest.execute(resource: .breeds) { (breedResponse: BreedResponse) in
+            self.dogBreeds = breedResponse
+                .toBreedList()
+                .sorted(by: {$0.title < $1.title})
+            
+        } onFailure: { error in
+            print(error.localizedDescription)
+            // TODO: do some handling code
+        }
     }
 }
