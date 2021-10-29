@@ -57,11 +57,15 @@ class APIRequest {
 
 enum Resource {
     case breeds
+    case dogsBy(Breed)
     
     fileprivate func buildEndpointURL() -> URL? {
         switch self {
         case .breeds:
             return Endpoint(path: "/breeds/list/all").value
+    
+        case let .dogsBy(breed):
+            return Endpoint(path: "/breed/\(breed.title)/images").value
         }
     }
 }
