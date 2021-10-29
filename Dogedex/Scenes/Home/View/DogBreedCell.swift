@@ -9,7 +9,7 @@ import UIKit
 
 class DogBreedCell: UITableViewCell, ReusableView {
     
-    static let height: CGFloat = 60
+    static let height: CGFloat = 64
         
     private lazy var breedLabel: UILabel = {
         let label = UILabel()

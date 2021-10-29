@@ -21,8 +21,8 @@ class DogBreedListViewModel {
     }
     
     func loadBreeds() {
-        APIRequest.execute(resource: .breeds) { (breedResponse: BreedResponse) in
-            self.dogBreeds = breedResponse
+        APIRequest.execute(resource: .breeds) { [weak self] (breedResponse: BreedResponse) in
+            self?.dogBreeds = breedResponse
                 .toBreedList()
                 .sorted(by: {$0.title < $1.title})
             
