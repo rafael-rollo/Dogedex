@@ -39,6 +39,8 @@
 		58696FA8272B677200B18788 /* DogsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696FA7272B677200B18788 /* DogsCoordinator.swift */; };
 		58696FAB272B6B7B00B18788 /* DogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696FAA272B6B7B00B18788 /* DogsViewModel.swift */; };
 		58696FB0272B93E500B18788 /* DogeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696FAF272B93E500B18788 /* DogeCell.swift */; };
+		58696FB2272B9EE100B18788 /* DogePhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696FB1272B9EE100B18788 /* DogePhotosResponse.swift */; };
+		58696FB6272B9FFC00B18788 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58696FB5272B9FFC00B18788 /* Breed.swift */; };
 		7CD8897BC1C9F87059D08B1D /* libPods-Dogedex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4FE174A2B47E1721F2E335 /* libPods-Dogedex.a */; };
 		A3E916544A01E16B54511F28 /* libPods-DogedexTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */; };
 		C3182FE30AA1B3C4B54B0DEB /* libPods-Dogedex-DogedexUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA57AB6221B3E5601C2E1DAC /* libPods-Dogedex-DogedexUITests.a */; };
@@ -104,6 +106,8 @@
 		58696FA7272B677200B18788 /* DogsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsCoordinator.swift; sourceTree = "<group>"; };
 		58696FAA272B6B7B00B18788 /* DogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsViewModel.swift; sourceTree = "<group>"; };
 		58696FAF272B93E500B18788 /* DogeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogeCell.swift; sourceTree = "<group>"; };
+		58696FB1272B9EE100B18788 /* DogePhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogePhotosResponse.swift; sourceTree = "<group>"; };
+		58696FB5272B9FFC00B18788 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		5B5220052E5DE5C080284B4D /* libPods-DogedexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DogedexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A721CCF9CC70B0F2078694 /* Pods-Dogedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogedex.debug.xcconfig"; path = "Target Support Files/Pods-Dogedex/Pods-Dogedex.debug.xcconfig"; sourceTree = "<group>"; };
 		B80EA423FD8B50DDBA9BCDF5 /* Pods-DogedexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogedexTests.debug.xcconfig"; path = "Target Support Files/Pods-DogedexTests/Pods-DogedexTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				58696F7C272B526B00B18788 /* Assets */,
 				58696F65272B259D00B18788 /* Common */,
 				58696F94272B5A5C00B18788 /* Coordinator */,
+				58696FB3272B9FEB00B18788 /* Model */,
 				58696F63272B243200B18788 /* Scenes */,
 				58696F6F272B349100B18788 /* Networking */,
 				58696F61272B1F7700B18788 /* SupportingFiles */,
@@ -285,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				58696F70272B34B300B18788 /* BreedResponse.swift */,
+				58696FB1272B9EE100B18788 /* DogePhotosResponse.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -382,6 +388,14 @@
 				58696FAF272B93E500B18788 /* DogeCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		58696FB3272B9FEB00B18788 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58696FB5272B9FFC00B18788 /* Breed.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +617,8 @@
 				58696F32272B1CCF00B18788 /* AppDelegate.swift in Sources */,
 				58696F71272B34B300B18788 /* BreedResponse.swift in Sources */,
 				58696F34272B1CCF00B18788 /* SceneDelegate.swift in Sources */,
+				58696FB6272B9FFC00B18788 /* Breed.swift in Sources */,
+				58696FB2272B9EE100B18788 /* DogePhotosResponse.swift in Sources */,
 				58696FB0272B93E500B18788 /* DogeCell.swift in Sources */,
 				58696FA4272B669400B18788 /* DogsViewController.swift in Sources */,
 				58696F9B272B5D3800B18788 /* DogBreedListCoordinator.swift in Sources */,

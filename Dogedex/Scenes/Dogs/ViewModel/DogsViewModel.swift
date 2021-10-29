@@ -27,10 +27,11 @@ class DogsViewModel {
     }
     
     func loadDogePhotos() {
-        dogePhotos = [
-            URL(string: "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg")!,
-            URL(string: "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg")!,
-            URL(string: "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg")!
-        ]
+        APIRequest.execute(resource: .dogsBy(breed)) { [weak self] (dogePhotosResponse: DogePhotosResponse) in
+            self?.dogePhotos = dogePhotosResponse.toDogePhotosURIs()
+
+        } onFailure: { error in
+            print(error.localizedDescription)
+        }
     }
 }

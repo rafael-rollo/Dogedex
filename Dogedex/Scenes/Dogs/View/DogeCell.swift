@@ -14,6 +14,7 @@ class DogeCell: UICollectionViewCell, ReusableView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .quaternaryLabel
         return imageView
     }()
     
@@ -33,6 +34,11 @@ class DogeCell: UICollectionViewCell, ReusableView {
 
         layoutIfNeeded()
         return layoutAttributes
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
     }
     
     func setup(from url: URL) {

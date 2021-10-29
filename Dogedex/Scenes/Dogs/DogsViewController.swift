@@ -37,6 +37,7 @@ class DogsViewController: UICollectionViewController {
         
         collectionView.register(DogeCell.self, forCellWithReuseIdentifier: DogeCell.reuseId)
         
+        viewModel.delegate = self
         viewModel.loadDogePhotos()
     }
 
