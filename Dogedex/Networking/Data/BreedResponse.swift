@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct Breed {
-    var title: String
-    var subBreeds: [String]? = []
-}
-
 struct BreedResponse: Codable {
     var all: [String: [String]]
     
