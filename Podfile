@@ -8,6 +8,7 @@ target 'Dogedex' do
   # Pods for Dogedex
 
   pod 'Alamofire', '~> 5.4'
+  pod 'AlamofireImage', '~> 4.1'
 
   target 'DogedexTests' do
     inherit! :search_paths
