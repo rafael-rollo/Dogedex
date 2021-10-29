@@ -7,19 +7,33 @@
 
 import UIKit
 
-class DogsViewController: UICollectionViewController {
+class DogsViewController: UIViewController {
+    
+    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let size =  UIScreen.main.bounds.width - 24
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: size, height: size)
+        layout.minimumLineSpacing = 12
+        return layout
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.register(DogeCell.self, forCellWithReuseIdentifier: DogeCell.reuseId)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.clipsToBounds = false
+        return collectionView
+    }()
     
     private var viewModel: DogsViewModel
     
     init(with viewModel: DogsViewModel) {
         self.viewModel = viewModel
-        
-        let size =  UIScreen.main.bounds.width - 24
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: size, height: size)
-        layout.minimumLineSpacing = 12
-        
-        super.init(collectionViewLayout: layout)
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -35,33 +49,14 @@ class DogsViewController: UICollectionViewController {
         super.viewDidLoad()
         self.title = viewModel.breed.title.capitalized
         
-        collectionView.register(DogeCell.self, forCellWithReuseIdentifier: DogeCell.reuseId)
-        
         viewModel.delegate = self
         viewModel.loadDogePhotos()
-    }
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.dogePhotos.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DogeCell.reuseId, for: indexPath) as? DogeCell else {
-            fatalError("Provide an appropriate item cell for DogsViewController's collection view")
-        }
-        
-        cell.setup(from: viewModel.dogePhotos[indexPath.row])
-        return cell
     }
     
 }
 
 extension DogsViewController: DogsViewModelDelegate {
+    
     func dogsViewModel(_ viewModel: DogsViewModel, didLoadDogsBy breed: Breed, dogs: [URL]) {
         collectionView.reloadData()
     }
@@ -72,10 +67,38 @@ extension DogsViewController: DogsViewModelDelegate {
             in: navigationController ?? self
         )
     }
+    
+}
+
+extension DogsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.dogePhotos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DogeCell.reuseId, for: indexPath) as? DogeCell else {
+            fatalError("Provide an appropriate item cell for DogsViewController's collection view")
+        }
+
+        cell.setup(from: viewModel.dogePhotos[indexPath.row])
+        return cell
+    }
+    
 }
 
 extension DogsViewController: ViewCode {
+    
     func addTheme() {
-        collectionView.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBackground
     }
+    
+    func addViews() {
+        view.addSubview(collectionView)
+    }
+    
+    func addConstraints() {
+        collectionView.constrainTo(edgesOf: view)
+    }
+    
 }
