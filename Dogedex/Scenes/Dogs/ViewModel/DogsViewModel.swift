@@ -8,7 +8,8 @@
 import Foundation
 
 protocol DogsViewModelDelegate: AnyObject {
-    func updateViews()
+    func dogsViewModel(_ viewModel: DogsViewModel, didLoadDogsBy breed: Breed, dogs: [URL])
+    func dogsViewModel(_ viewModel: DogsViewModel, didErrorOccurLoadingDogs error: Error)
 }
 
 class DogsViewModel {
@@ -18,7 +19,7 @@ class DogsViewModel {
     
     var dogePhotos: [URL] = [] {
         didSet {
-            self.delegate?.updateViews()
+            self.delegate?.dogsViewModel(self, didLoadDogsBy: breed, dogs: dogePhotos)
         }
     }
     
@@ -30,8 +31,9 @@ class DogsViewModel {
         APIRequest.execute(resource: .dogsBy(breed)) { [weak self] (dogePhotosResponse: DogePhotosResponse) in
             self?.dogePhotos = dogePhotosResponse.toDogePhotosURIs()
 
-        } onFailure: { error in
-            print(error.localizedDescription)
+        } onFailure: { [weak self] error in
+            debugPrint(error)
+            self?.delegate?.dogsViewModel(self!, didErrorOccurLoadingDogs: error)
         }
     }
 }

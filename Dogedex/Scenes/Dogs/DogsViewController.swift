@@ -62,8 +62,15 @@ class DogsViewController: UICollectionViewController {
 }
 
 extension DogsViewController: DogsViewModelDelegate {
-    func updateViews() {
+    func dogsViewModel(_ viewModel: DogsViewModel, didLoadDogsBy breed: Breed, dogs: [URL]) {
         collectionView.reloadData()
+    }
+    
+    func dogsViewModel(_ viewModel: DogsViewModel, didErrorOccurLoadingDogs error: Error) {
+        TopAlert.show(
+            message: "Something went wrong loading the dog photos.",
+            in: navigationController ?? self
+        )
     }
 }
 
