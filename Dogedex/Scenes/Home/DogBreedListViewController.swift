@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol DogBreedListFlowDelegate: AnyObject {
+    func dogBreedListViewController(_ controller: DogBreedListViewController, didSelectBreed breed: Breed)
+}
+
 class DogBreedListViewController: UITableViewController {
     
     // MARK: - properties
     private var viewModel: DogBreedListViewModel
+        
+    var flowDelegate: DogBreedListFlowDelegate?
     
     // MARK: - view lifecycle methods
     init(viewModel: DogBreedListViewModel = DogBreedListViewModel()) {
@@ -24,13 +30,14 @@ class DogBreedListViewController: UITableViewController {
     
     override func loadView() {
         super.loadView()
-        
-        self.title = "All Breeds"
         setup()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "All Breeds"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -61,9 +68,12 @@ class DogBreedListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return DogBreedCell.height
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let selectedBreed = viewModel.dogBreeds[indexPath.row]
+        flowDelegate?.dogBreedListViewController(self, didSelectBreed: selectedBreed)
     }
 }
 

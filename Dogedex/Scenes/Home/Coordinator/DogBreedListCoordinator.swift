@@ -18,10 +18,22 @@ class DogBreedListCoordinator: StackCoordinator {
     
     func start() -> UIViewController {
         let controller = DogBreedListViewController()
+        controller.flowDelegate = self
+        
         navigationController.setViewControllers([controller], animated: false)
         
         rootViewController = controller
         return navigationController
     }
+
+}
+
+extension DogBreedListCoordinator: DogBreedListFlowDelegate {
     
+    func dogBreedListViewController(_ controller: DogBreedListViewController, didSelectBreed breed: Breed) {
+        let viewController = DogsCoordinator(with: breed, navigationController: navigationController).start()
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
 }
