@@ -8,7 +8,10 @@
 import Foundation
 
 protocol DogBreedListViewModelDelegate: AnyObject {
-    func updateViews()
+    func dogBreedListViewModel(_ viewModel: DogBreedListViewModel,
+                               didLoadDogBreeds breeds: [Breed])
+    func dogBreedListViewModel(_ viewModel: DogBreedListViewModel,
+                              didErrorOccurLoadingBreeds error: Error)
 }
 
 class DogBreedListViewModel {
@@ -16,7 +19,7 @@ class DogBreedListViewModel {
     
     var dogBreeds: [Breed] = [] {
         didSet {
-            self.delegate?.updateViews()
+            self.delegate?.dogBreedListViewModel(self, didLoadDogBreeds: dogBreeds)
         }
     }
     
@@ -26,9 +29,9 @@ class DogBreedListViewModel {
                 .toBreedList()
                 .sorted(by: {$0.title < $1.title})
             
-        } onFailure: { error in
-            print(error.localizedDescription)
-            // TODO: do some handling code
+        } onFailure: { [weak self] error in
+            debugPrint(error)
+            self?.delegate?.dogBreedListViewModel(self!, didErrorOccurLoadingBreeds: error)
         }
     }
 }

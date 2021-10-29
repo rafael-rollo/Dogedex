@@ -79,8 +79,18 @@ class DogBreedListViewController: UITableViewController {
 
 // MARK: - view model delegation
 extension DogBreedListViewController: DogBreedListViewModelDelegate {
-    func updateViews() {
+    func dogBreedListViewModel(_ viewModel: DogBreedListViewModel,
+                               didLoadDogBreeds breeds: [Breed]) {
         tableView.reloadData()
+    }
+    
+    func dogBreedListViewModel(_ viewModel: DogBreedListViewModel,
+                               didErrorOccurLoadingBreeds error: Error) {
+        TopAlert.show(message: "Something went wrong loading the breeds.",
+                      in: navigationController ?? self,
+                      action: .init(title: "Retry", handler: { [weak self] in
+            self?.viewModel.loadBreeds()
+        }))
     }
 }
 
