@@ -28,7 +28,13 @@ class DogsViewModel {
     }
     
     func loadDogePhotos() {
-        APIRequest.execute(resource: .dogsBy(breed)) { [weak self] (dogePhotosResponse: DogePhotosResponse) in
+        var resource: Resource = .dogsByBreed(breed.title)
+        
+        if let subBreeds = breed.subBreeds, let subBreed = subBreeds.first {
+            resource = .dogsByBreedAndSubBreed(breed.title, subBreed)
+        }
+        
+        APIRequest.execute(resource: resource) { [weak self] (dogePhotosResponse: DogePhotosResponse) in
             self?.dogePhotos = dogePhotosResponse.toDogePhotosURIs()
 
         } onFailure: { [weak self] error in
