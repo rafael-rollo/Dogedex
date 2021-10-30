@@ -9,6 +9,14 @@ import UIKit
 
 class DogsViewController: UIViewController {
     
+    // MARK: - subviews
+    private lazy var subBreedSelectorView: SubBreedSelector = {
+        let view = SubBreedSelector()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let size =  UIScreen.main.bounds.width - 24
         
@@ -22,15 +30,35 @@ class DogsViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.register(DogeCell.self, forCellWithReuseIdentifier: DogeCell.reuseId)
         collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
-        collectionView.clipsToBounds = false
+        collectionView.isScrollEnabled = false
         return collectionView
     }()
     
+    private lazy var contentContainerView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [
+            subBreedSelectorView,
+            collectionView,
+        ])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentContainerView)
+        return scrollView
+    }()
+    
+    // MARK: - properties
     private var viewModel: DogsViewModel
     
+    // MARK: - view lifecycle
     init(with viewModel: DogsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -48,17 +76,31 @@ class DogsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = viewModel.breed.title.capitalized
+        self.navigationController?.navigationBar.backgroundColor = .systemBackground
         
         viewModel.delegate = self
         viewModel.loadDogePhotos()
+        
+        if let subBreeds = viewModel.breed.subBreeds {
+            subBreedSelectorView.setup(with: subBreeds)
+        }
     }
     
+    func resizeCollectionView() {
+        let totalItemHeight = collectionViewLayout.itemSize.height + collectionViewLayout.minimumLineSpacing
+        let size = totalItemHeight * CGFloat(viewModel.dogePhotos.count) + 12
+        
+        collectionView.constrainHeight(to: size)
+    }
 }
 
+// MARK: - view model delegation
 extension DogsViewController: DogsViewModelDelegate {
     
     func dogsViewModel(_ viewModel: DogsViewModel, didLoadDogsBy breed: Breed, dogs: [URL]) {
         collectionView.reloadData()
+        
+        resizeCollectionView()
     }
     
     func dogsViewModel(_ viewModel: DogsViewModel, didErrorOccurLoadingDogs error: Error) {
@@ -70,7 +112,8 @@ extension DogsViewController: DogsViewModelDelegate {
     
 }
 
-extension DogsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: - collection view management
+extension DogsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.dogePhotos.count
@@ -87,6 +130,7 @@ extension DogsViewController: UICollectionViewDataSource, UICollectionViewDelega
     
 }
 
+// MARK: - view code
 extension DogsViewController: ViewCode {
     
     func addTheme() {
@@ -94,11 +138,20 @@ extension DogsViewController: ViewCode {
     }
     
     func addViews() {
-        view.addSubview(collectionView)
+        view.addSubview(scrollView)
     }
     
     func addConstraints() {
-        collectionView.constrainTo(edgesOf: view)
+        scrollView.constrainTo(edgesOf: view)
+        
+        contentContainerView.constrainToTopAndSides(of: scrollView)
+        contentContainerView.anchorToCenterX(of: scrollView)
+
+        let contentViewBottomConstraint = contentContainerView.constrainToBottom(of: scrollView)
+        contentViewBottomConstraint.priority = .defaultLow
+
+        let contentViewCenterYConstraint = contentContainerView.anchorToCenterY(of: scrollView)
+        contentViewCenterYConstraint.priority = .defaultLow
     }
     
 }
