@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SubBreedSelectorDelegate: AnyObject {
+    func subBreedSelector(_ view: SubBreedSelector, didSelectSubBreed subBreed: String)
+}
+
 class SubBreedSelector: UIView {
     
     private lazy var collectionView: UICollectionView = {
@@ -36,6 +40,8 @@ class SubBreedSelector: UIView {
     
     private var selectedIndex: Int = 0
     
+    weak var delegate: SubBreedSelectorDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -52,7 +58,8 @@ class SubBreedSelector: UIView {
 }
 
 extension SubBreedSelector: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
     
@@ -66,6 +73,16 @@ extension SubBreedSelector: UICollectionViewDataSource {
         
         cell.setup(with: subBreed, isSelected: indexPath.row == selectedIndex)
         return cell
+    }
+}
+
+extension SubBreedSelector: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        collectionView.reloadData()
+        
+        delegate?.subBreedSelector(self, didSelectSubBreed: items[selectedIndex])
     }
 }
 

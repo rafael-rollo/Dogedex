@@ -46,6 +46,11 @@ class SubBreedCell: UICollectionViewCell, ReusableView {
         backgroundColor = .label
         label.textColor = .systemBackground
     }
+    
+    override func prepareForReuse() {
+        backgroundColor = .systemBackground
+        label.textColor = .label
+    }
 }
 
 extension SubBreedCell {
