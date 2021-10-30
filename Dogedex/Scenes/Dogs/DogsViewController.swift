@@ -12,6 +12,7 @@ class DogsViewController: UIViewController {
     // MARK: - subviews
     private lazy var subBreedSelectorView: SubBreedSelector = {
         let view = SubBreedSelector()
+        view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         return view
@@ -58,6 +59,8 @@ class DogsViewController: UIViewController {
     // MARK: - properties
     private var viewModel: DogsViewModel
     
+    private var heightContraint: NSLayoutConstraint?
+    
     // MARK: - view lifecycle
     init(with viewModel: DogsViewModel) {
         self.viewModel = viewModel
@@ -90,7 +93,12 @@ class DogsViewController: UIViewController {
         let totalItemHeight = collectionViewLayout.itemSize.height + collectionViewLayout.minimumLineSpacing
         let size = totalItemHeight * CGFloat(viewModel.dogePhotos.count) + 12
         
-        collectionView.constrainHeight(to: size)
+        guard let constraint = heightContraint else {
+            heightContraint = collectionView.constrainHeight(to: size)
+            return
+        }
+        
+        constraint.constant = size
     }
 }
 
@@ -108,6 +116,15 @@ extension DogsViewController: DogsViewModelDelegate {
             message: "Something went wrong loading the dog photos.",
             in: navigationController ?? self
         )
+    }
+    
+}
+
+// MARK: - sub breed delegation
+extension DogsViewController: SubBreedSelectorDelegate {
+    
+    func subBreedSelector(_ view: SubBreedSelector, didSelectSubBreed subBreed: String) {
+        viewModel.loadDogePhotosOf(subBreed: subBreed)
     }
     
 }

@@ -34,6 +34,15 @@ class DogsViewModel {
             resource = .dogsByBreedAndSubBreed(breed.title, subBreed)
         }
         
+        request(resource)
+    }
+    
+    func loadDogePhotosOf(subBreed: String) {
+        let resource = Resource.dogsByBreedAndSubBreed(breed.title, subBreed)
+        request(resource)
+    }
+    
+    private func request(_ resource: Resource) {
         APIRequest.execute(resource: resource) { [weak self] (dogePhotosResponse: DogePhotosResponse) in
             self?.dogePhotos = dogePhotosResponse.toDogePhotosURIs()
 
