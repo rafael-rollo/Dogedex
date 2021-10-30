@@ -34,6 +34,8 @@ class SubBreedSelector: UIView {
         }
     }
     
+    private var selectedIndex: Int = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -60,7 +62,9 @@ extension SubBreedSelector: UICollectionViewDataSource {
             fatalError("Provide an appropriate cell for subbreeds collection view")
         }
         
-        cell.title = items[indexPath.row]
+        let subBreed = items[indexPath.row]
+        
+        cell.setup(with: subBreed, isSelected: indexPath.row == selectedIndex)
         return cell
     }
 }

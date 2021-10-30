@@ -25,12 +25,6 @@ class SubBreedCell: UICollectionViewCell, ReusableView {
         return label
     }()
     
-    var title: String? {
-        didSet {
-            label.text = title?.capitalized
-        }
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -38,6 +32,19 @@ class SubBreedCell: UICollectionViewCell, ReusableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(with title: String, isSelected: Bool) {
+        label.text = title.capitalized
+        
+        if isSelected {
+            setSelectedStyle()
+        }
+    }
+    
+    func setSelectedStyle() {
+        backgroundColor = .label
+        label.textColor = .systemBackground
     }
 }
 
