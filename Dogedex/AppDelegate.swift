@@ -71,7 +71,7 @@ extension AppDelegate {
         let customImageDownloader = ImageDownloader(
             configuration: customSessionConfiguration(),
             downloadPrioritization: .fifo,
-            maximumActiveDownloads: 4,
+            maximumActiveDownloads: 3,
             imageCache: AutoPurgingImageCache(
                 memoryCapacity: 120_000_000,
                 preferredMemoryUsageAfterPurge: 60_000_000
